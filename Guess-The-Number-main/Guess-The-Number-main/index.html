@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Guess The Number</title>
+    </head>
+    <body>
+        <header>
+            <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Guess The Number</a>
+        </header>
+        <div id="game">
+            <div id="left-side">
+                <div id="instructions">
+                    <h2>Instructions</h2>
+                    <ul id="instructionsList">
+                        <li>Welcome to <span>"Guess the Number"</span> Game!</li>
+                        <li>A number will be generated within a given range.</li>
+                        <li>Guess the correct number within 10 chances.</li>
+                        <li>Incorrect Answers will provide you hints about whether the generated number is bigger or smaller than your last guessed number.</li>
+                    </ul>
+                    <button id="nextBtn">Next</button>
+                </div>
+                <div id="difficultyContainer">
+                    <h2>Difficulty</h2>
+                    <span>Select The difficulty you want to play.</span>
+                    <div id="options">
+                        <button id="easyBtn">Easy: <br> 0 - 100</button>
+                        <button id="mediumBtn">Medium: <br> 0 - 250</button>
+                        <button id="hardBtn">Hard: <br> 0 - 500</button>
+                    </div>
+                </div>
+                <div id="gameContainer">
+                    <h2>Guess The Number!</h2>
+                    <p id="range"></p>
+                    <p id="chances">You have 10 chances left.</p>
+                    <p>Enter your guess below:</p>
+                    <input type="number" placeholder="Enter your guess here" id="guess">
+                    <input type="submit" value="Check" id="check">
+                </div>
+                <div id="winContainer">
+                    <h2>You Win!</h2>
+                    <p id="correctGuess"></p>
+                    <p id="chancesTaken"></p>
+                    <div class="endBtns">
+                        <button id="winHomeBtn">Home</button>
+                        <button id="winPlayAgainBtn">Play Again</button>
+                    </div>
+                </div>
+                <div id="loseContainer">
+                    <h2>You Lose!</h2>
+                    <p id="incorrectChances"></p>
+                    <p id="incorrectGuess"></p>
+                    <div class="endBtns">
+                        <button id="loseHomeBtn">Home</button>
+                        <button id="losePlayAgainBtn">Play Again</button>
+                    </div>
+                </div>
+            </div>
+            <div id="right-side">
+                <div id="hintsContainer">
+                    <h2>Hints</h2>
+                    <div id="titles">
+                        <h3>Higher</h3>
+                        <h3>Lower</h3>
+                    </div>
+                    <div id="hints">
+                        <ul id="higher">
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                        </ul>
+                        <ul id="lower">
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                            <li>--</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="scoreBoardContainer">
+                    <h2>Scoreboard</h2>
+                    <div id="scoreTitles">
+                        <h3>Wins</h3>
+                        <h3>Loses</h3>
+                    </div>
+                    <div id="score">
+                        <p id="wins">--</p>
+                        <p id="loses">--</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

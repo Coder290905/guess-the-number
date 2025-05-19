@@ -1,0 +1,352 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(
+        115deg,
+        rgba(240, 241, 171, 0.8),
+        rgba(116, 116, 116, 0.7)
+    ),
+    url(https://media.istockphoto.com/id/487063216/photo/too-many-questions.jpg?s=612x612&w=0&k=20&c=4WZNqq5FY0UOj-JVHgRIgRp1vvphLA6wIvuq04WESx4=);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.5rem;
+    padding: 15px 0;
+    background: linear-gradient(
+        160deg,
+        rgba(109, 248, 75, 0.85),
+        rgba(255, 255, 0, 0.85)
+    );
+    box-shadow: 0 0 5px greenyellow;
+    text-shadow: 0 0 6px limegreen;
+    color: #fff
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#game {
+    display: flex;
+    width: 90%;
+    height: 80%;
+    margin:25px auto 0 auto;
+    gap: 20px;
+}
+
+#instructions {
+    padding: 50px;
+    height: 100%;
+    display: block;
+
+    animation-name: instructionsAnimation;
+    animation-duration: .4s;
+}
+
+#left-side h2 {
+    font-size: 2.2rem;
+}
+
+#instructionsList {
+    width: 100%;
+    height: 70%;
+    margin-top: 20px;
+    font-size: clamp(20px, 2vw, 50px);
+}
+
+#instructionsList li:nth-child(1) {
+    list-style-type: none;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 0 0 4px black;
+}
+
+#instructionsList li:not(:nth-child(1)) {
+    text-align: left;
+    margin-top: 15px;
+    font-size: clamp(10px, 2vw, 20px);
+}
+
+#gameContainer h2 {
+    margin-bottom: 30px;
+}
+
+#gameContainer {
+    display: none;
+    animation-name: gameAnimation;
+    animation-duration: .4s;
+}
+
+#gameContainer p, #winContainer p, #loseContainer p {
+    color: #fff;
+    line-height: 30px;
+    font-size: clamp(12px, 2vw, 20px);
+    text-shadow: 0 0 5px black;
+}
+
+#guess {
+    font-size: 1.8vw;
+    margin: 30px 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 5px limegreen
+}
+
+#left-side {
+    width: 70%;
+    height: 100%;
+    background-color: rgba(147, 226, 127, 0.85);
+    padding: 20px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 4px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#right-side {
+    width: 30%;
+}
+
+#titles, #scoreTitles {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    color: #fff;
+    text-shadow: 0 0 5px black;
+}
+
+#titles h3:first-child {
+    border-right: 2px solid black;
+}
+
+#scoreTitles h3:first-child {
+    border-right: 2px solid black;
+}
+
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    font-size: 1.8rem;
+    text-shadow: 0 0 5px black;
+    padding: 10px 0;
+}
+
+h3 {
+    padding: 10px 0;
+    width: 100%;
+}
+
+#right-side li {
+    list-style-type: none;
+    line-height: 26.5px;
+}
+
+#hints, #score {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#hintsContainer {
+    background-color: rgba(247, 255, 138, 0.85);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 4px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#higher {
+    border-right: 2px solid black;
+    padding: 10px 0;
+    width: 100%;
+}
+
+#lower {
+    padding: 10px 0;
+    width: 100%;
+}
+
+#scoreBoardContainer {
+    width: 100%;
+    background-color: rgb(247, 255, 138);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 4px;
+    text-align: center;
+}
+
+#wins {
+    border-right: 2px solid black;
+    padding: 10px 0;
+    width: 100%;
+}
+
+#loses {
+    padding: 10px 0;
+    width: 100%;
+}
+
+span {
+    font-weight: bold;
+    font-style: italic;
+}
+
+#nextBtn {
+    padding: 10px 40px;
+    font-size: clamp(15px, 2vw, 30px);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 3px black;
+    color: #fff;
+    background-color: rgb(84, 199, 84);
+}
+
+button:hover, #check:hover {
+    transform: scale(1.2);
+    transition: .2s linear;
+    cursor: pointer;
+}
+
+#difficultyContainer {
+    width: 100%;
+    color: #fff;
+    text-shadow: 0 0 5px black;
+    display: none;
+    font-size: clamp(15px, 3vw, 25px);
+
+    animation-name: difficultyAnimation;
+    animation-duration: .5s;
+}
+
+#options {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px auto 0 auto;
+}
+
+#easyBtn, #mediumBtn, #hardBtn, #check, .endBtns button {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 3px black;
+    color: #fff;
+    background-color: rgb(84, 199, 84);
+    padding: 10px 30px;
+    font-size: clamp(10px, 2vw, 20px);
+}
+
+#winContainer {
+    width: 100%;
+    display: none;
+
+    animation-name: winContainerAnimation;
+    animation-duration: .3s;
+}
+
+#winContainer h2, #loseContainer h2 {
+    font-size: 6vw;
+}
+
+.endBtns {
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px auto 0 auto;
+}
+
+#loseContainer {
+    width: 100%;
+    display: none;
+
+    animation-name: loseContainerAnimation;
+    animation-duration: .3s;
+}
+
+@keyframes instructionsAnimation {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes difficultyAnimation {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes gameAnimation {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes winContainerAnimation {
+    from {
+        scale: 0;
+        opacity: 0;
+    } to {
+        transform: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes loseContainerAnimation {
+    from {
+        scale: 0;
+        opacity: 0;
+    } to {
+        transform: 1;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #game {
+        flex-direction: column;
+    }
+
+    #left-side, #right-side {
+        width: 100%;
+    }
+    
+    #scoreBoardContainer {
+        margin-bottom: 5%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .endBtns {
+        width: 80%;
+    }
+
+    #options {
+        width: 100%;
+    }
+}
